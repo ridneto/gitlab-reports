@@ -30,9 +30,9 @@ class UpdateUserAvatarService {
       }
     }
 
-    user.avatar = await avatarFilename;
+    user.avatar = avatarFilename;
 
-    usersRepository.save(user);
+    await usersRepository.save(user);
 
     return user;
   }
