@@ -41,11 +41,8 @@ class AuthenticateUserService {
       throw new AppError('Incorrect email/password combination', 401);
     }
 
-    const { secret, expiresIn } = authConfig.jwt;
-
-    if (!secret) {
-      throw new Error('Secret jwt key not found');
-    }
+    const secret = authConfig.jwt.secret as string;
+    const { expiresIn } = authConfig.jwt;
 
     const token = sign({}, secret, {
       subject: user.id,
