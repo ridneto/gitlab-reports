@@ -4,6 +4,7 @@ node_modules
 coverage
 build/
 .env
+ormconfig.json
 yarn-error.log
 tmp/*
 !tmp/.gitkeep
